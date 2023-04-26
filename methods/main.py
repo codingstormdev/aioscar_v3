@@ -27,5 +27,9 @@ def isPrivate(message) -> None:
         return True
     
 
-def isPromoted(message) -> None:
+def isUserPromoted(message) -> None:
+    pass
+
+
+def isBotPromoted(message) -> None:
     pass

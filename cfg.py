@@ -1,5 +1,6 @@
 botToken = ""
 rootID = []
-codename = "springtime alpha"
-version = "v1"
+codename = "springtime"
+devStatus = "alpha"
+version = "v2"
 defaultLang = "en"

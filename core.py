@@ -25,23 +25,25 @@ async def main() -> None:
     dp.include_router(router)
     await dp.start_polling(bot)
 
+
 @router.message(Command(commands=["status"]))
 async def status(message: Message) -> None:
     await message.reply(
             f"Build:<code> {version}</code>" +
+            f"\nVersion status:<code> {devStatus}</code>" +
             f"\nCodename:<code> {codename}</code>" +
             f"\nUptime:<code> {str(datetime.now() - StartTime)}</code>" +
             f"\nChat id:<code> {str(message.chat.id)}</code>" +
             f"\nUser id:<code> {str(message.from_user.id)}</code>" +
             f"\nTelegram latency:<code> {str(pythonping.ping('api.telegram.org').rtt_avg_ms)}</code>" +
-            f"\nLanguage:<code>Python {platform.python_version()}</code>" +
+            f"\nLanguage:<code> Python {platform.python_version()}</code>" +
             f"\nLib:<code> aiogram 3</code>" +
             f"\nRunning system:<code> {platform.system()} {platform.release()}</code>" +
             f"\n@codingstorm, 2023")
 
-async def coin(message: Message) -> None:
+@router.message(Command(commands=["status"]))
+async def status(message: Message) -> None:
     pass
-
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
